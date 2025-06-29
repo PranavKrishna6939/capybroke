@@ -1,1 +1,0 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/home/jjbigdub/gitrepo/capybroke/app/layout\":[\"static/media/e4af272ccee01ff0-s.p.woff2\",\"static/media/5d53fc5cc5ac1f67-s.p.woff2\",\"static/media/6140489ca5776eed-s.p.woff2\",\"static/media/d542e1cea0499b09-s.p.woff2\",\"static/media/562de9ffa6de8caa-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
