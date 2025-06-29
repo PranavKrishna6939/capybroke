@@ -2,14 +2,14 @@ export default function LoadingSpinner() {
   return (
     <section className="relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="flex min-h-screen items-center justify-center py-12 md:py-20">
+        <div className="flex min-h-[60vh] items-center justify-center py-8 md:py-12">
           <div className="text-center">
             {/* Animated PortfolioBara icon */}
             <div className="mb-8 flex justify-center">
               <div className="relative">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brown-200/20 p-2 animate-pulse">
                   <img
-                    src="/portfoliobara.png"
+                    src="/images/portfoliobara.png"
                     alt="Portfolio Capybara"
                     className="h-12 w-12 rounded-full"
                   />
@@ -17,7 +17,7 @@ export default function LoadingSpinner() {
                 <div className="absolute inset-0 h-16 w-16 animate-ping">
                   <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brown-200/10 p-2">
                     <img
-                      src="/portfoliobara.png"
+                      src="/images/portfoliobara.png"
                       alt="Portfolio Capybara"
                       className="h-12 w-12 rounded-full opacity-30"
                     />
@@ -32,8 +32,6 @@ export default function LoadingSpinner() {
             
             <p className="text-lg text-brown-200/65 mb-8">
               PortfolioBara is analyzing your stock picks and preparing some brutal honesty.
-              <br />
-              This might take a moment...
             </p>
 
             {/* Loading dots */}

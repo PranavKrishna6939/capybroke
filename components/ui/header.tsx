@@ -13,7 +13,7 @@ export default function Header() {
             <Link href="/" className="inline-flex items-center gap-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-brown-200/20 p-1">
                 <Image
-                  src="/portfoliobara.png"
+                  src="/images/portfoliobara.png"
                   alt="Portfolio Capybara"
                   width={24}
                   height={24}
