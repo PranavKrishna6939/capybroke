@@ -40,7 +40,7 @@ const nacelle = localFont({
 
 export const metadata = {
   title: "Roast My Portfolio - Get Your Stock Portfolio Brutally Analyzed",
-  description: "Submit your stock tickers and get a hilarious, insightful roast of your investment choices. AI-powered portfolio analysis with humor.",
+  description: "Submit your stock tickers and get a hilarious, insightful roast of your investment choices. PortfolioBara-powered portfolio analysis with humor.",
 };
 
 export default function RootLayout({

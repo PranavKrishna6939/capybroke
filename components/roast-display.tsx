@@ -29,9 +29,9 @@ export default function RoastDisplay({ data }: RoastDisplayProps) {
         <div className="py-12 md:py-20">
           
           {/* Header */}
-          <div className="text-center mb-12" data-aos="fade-up">
+          <div className="text-center mb-8" data-aos="fade-up">
             <p className="text-lg text-brown-200/65">
-              Here's what our AI really thinks about your investment choices...
+              Here's what PortfolioBara really thinks about your investment choices...
             </p>
           </div>
 

@@ -39,7 +39,7 @@ export default function LoadingSpinner() {
             </h2>
             
             <p className="text-lg text-brown-200/65 mb-8">
-              Our AI is analyzing your stock picks and preparing some brutal honesty.
+              PortfolioBara is analyzing your stock picks and preparing some brutal honesty.
               <br />
               This might take a moment... ⏰
             </p>
