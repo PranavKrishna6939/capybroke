@@ -44,13 +44,13 @@ export default function ChatInterface() {
           {/* Hero content */}
           <div className="mx-auto max-w-4xl text-center">
             <h1
-              className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-8 font-nacelle text-4xl font-semibold text-transparent md:text-6xl"
+              className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-brown-200),var(--color-gray-50),var(--color-brown-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-8 font-nacelle text-4xl font-semibold text-transparent md:text-6xl"
               data-aos="fade-up"
             >
               Roast My Portfolio
             </h1>
             <p
-              className="mb-12 text-xl text-indigo-200/65 md:text-2xl"
+              className="mb-12 text-xl text-brown-200/65 md:text-2xl"
               data-aos="fade-up"
               data-aos-delay={200}
             >
@@ -74,7 +74,7 @@ export default function ChatInterface() {
                       value={input}
                       onChange={(e) => setInput(e.target.value)}
                       placeholder="Enter your stock tickers (e.g., AAPL, TSLA, AMZN, NVDA)..."
-                      className="form-textarea w-full resize-none rounded-lg bg-gray-800/50 px-4 py-3 text-gray-200 placeholder-gray-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
+                      className="form-textarea w-full resize-none rounded-lg bg-gray-800/50 px-4 py-3 text-gray-200 placeholder-gray-500 focus:border-brown-500 focus:ring-2 focus:ring-brown-500/20"
                       rows={3}
                       disabled={isSubmitting}
                     />
@@ -87,7 +87,7 @@ export default function ChatInterface() {
                     <button
                       type="submit"
                       disabled={isSubmitting || !input.trim()}
-                      className="btn bg-linear-to-t from-indigo-600 to-indigo-500 bg-[length:100%_100%] bg-[bottom] text-white shadow-[inset_0px_1px_0px_0px_--theme(--color-white/.16)] hover:bg-[length:100%_150%] disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="btn bg-linear-to-t from-brown-600 to-brown-500 bg-[length:100%_100%] bg-[bottom] text-white shadow-[inset_0px_1px_0px_0px_--theme(--color-white/.16)] hover:bg-[length:100%_150%] disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isSubmitting ? (
                         <span className="flex items-center gap-2">

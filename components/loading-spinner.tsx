@@ -34,11 +34,11 @@ export default function LoadingSpinner() {
               </div>
             </div>
 
-            <h2 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),#f5e6d3,var(--color-gray-50),#e3bb9b,var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-4 font-nacelle text-3xl font-semibold text-transparent md:text-4xl">
+            <h2 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-brown-200),var(--color-gray-50),var(--color-brown-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-4 font-nacelle text-3xl font-semibold text-transparent md:text-4xl">
               Roasting Your Portfolio...
             </h2>
             
-            <p className="text-lg text-indigo-200/65 mb-8">
+            <p className="text-lg text-brown-200/65 mb-8">
               Our AI is analyzing your stock picks and preparing some brutal honesty.
               <br />
               This might take a moment... ⏰
@@ -46,9 +46,9 @@ export default function LoadingSpinner() {
 
             {/* Loading dots */}
             <div className="flex justify-center space-x-2">
-              <div className="h-2 w-2 bg-indigo-500 rounded-full animate-bounce"></div>
-              <div className="h-2 w-2 bg-indigo-500 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-              <div className="h-2 w-2 bg-indigo-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+              <div className="h-2 w-2 bg-brown-500 rounded-full animate-bounce"></div>
+              <div className="h-2 w-2 bg-brown-500 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+              <div className="h-2 w-2 bg-brown-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
             </div>
 
             {/* Fun loading messages */}
