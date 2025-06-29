@@ -98,7 +98,7 @@ export default function ChatInterface() {
                           Roasting...
                         </span>
                       ) : (
-                        "Roast My Portfolio 🔥"
+                        "Roast My Portfolio"
                       )}
                     </button>
                   </div>
