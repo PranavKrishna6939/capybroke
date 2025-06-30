@@ -1,12 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 export default function ChatInterface() {
   const [input, setInput] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
+  
+  // Track user session for analytics
+  useEffect(() => {
+    // Generate session ID for analytics tracking
+    const sessionId = `session-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+    sessionStorage.setItem('analyticsSessionId', sessionId);
+    
+    // Track page view
+    fetch('/api/analytics', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer capybara-analytics-2025`,
+      },
+      body: JSON.stringify({
+        event: 'page_view',
+        page: 'chat_interface',
+        sessionId: sessionId,
+        timestamp: new Date().toISOString(),
+      }),
+    }).catch(() => {}); // Silent fail for analytics
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,6 +54,23 @@ export default function ChatInterface() {
       setIsSubmitting(false);
       return;
     }
+
+    // Track portfolio roast request
+    const sessionId = sessionStorage.getItem('analyticsSessionId');
+    fetch('/api/analytics', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer capybara-analytics-2025`,
+      },
+      body: JSON.stringify({
+        event: 'portfolio_roast_request',
+        tickerCount: tickers.length,
+        tickers: tickers,
+        sessionId: sessionId,
+        timestamp: new Date().toISOString(),
+      }),
+    }).catch(() => {}); // Silent fail for analytics
 
     // Navigate to roast page with tickers as query params
     router.push(`/roast?tickers=${tickers.join(',')}`);
