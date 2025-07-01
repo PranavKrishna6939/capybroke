@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
     const clientIP = xForwardedFor.split(',')[0] || 'unknown';
     const userID = `${clientIP}-${Date.now()}`;
 
-    const response = await fetch(`${GO_BACKEND_URL}/roast`, {
+    const response = await fetch(`${GO_BACKEND_URL}/backend/roast`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

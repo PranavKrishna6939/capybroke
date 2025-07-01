@@ -5,7 +5,7 @@ const GO_BACKEND_URL = process.env.GO_BACKEND_URL || 'http://localhost:8080';
 export async function GET(request: NextRequest) {
   try {
     // Fetch analytics data from Go backend
-    const response = await fetch(`${GO_BACKEND_URL}/analytics`, {
+    const response = await fetch(`${GO_BACKEND_URL}/backend/analytics`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
