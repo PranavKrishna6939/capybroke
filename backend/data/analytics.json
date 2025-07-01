@@ -10,61 +10,61 @@
     },
     "roast": {
       "endpoint": "roast",
-      "requestCount": 46,
-      "lastRequestTime": "2025-07-01T06:43:14.854789146+05:30",
-      "requestsToday": 46,
-      "requestsThisHour": 46,
+      "requestCount": 48,
+      "lastRequestTime": "2025-07-01T06:50:51.255244568+05:30",
+      "requestsToday": 48,
+      "requestsThisHour": 48,
       "errorCount": 0
     }
   },
   "userMetrics": {
-    "uniqueUsers": 7,
-    "totalPageVisits": 36,
+    "uniqueUsers": 8,
+    "totalPageVisits": 38,
     "concurrentUsers": 0,
     "highestConcurrent": 2,
-    "lastUpdate": "2025-07-01T06:43:14.854803533+05:30"
+    "lastUpdate": "2025-07-01T06:50:51.255266917+05:30"
   },
   "geminiKeyMetrics": [
     {
       "keyIndex": 1,
       "keyName": "GEMINI_API_KEY_2",
-      "requestCount": 42,
+      "requestCount": 47,
       "errorCount": 0,
-      "lastUsed": "2025-07-01T06:43:14.343430396+05:30",
+      "lastUsed": "2025-07-01T06:50:50.412611808+05:30",
       "isActive": true
     },
     {
       "keyIndex": 0,
       "keyName": "GEMINI_API_KEY_1",
-      "requestCount": 42,
+      "requestCount": 47,
       "errorCount": 0,
-      "lastUsed": "2025-07-01T06:43:12.807083368+05:30",
+      "lastUsed": "2025-07-01T06:50:49.412297116+05:30",
       "isActive": true
     },
     {
       "keyIndex": 2,
       "keyName": "GEMINI_API_KEY_3",
-      "requestCount": 39,
+      "requestCount": 44,
       "errorCount": 0,
-      "lastUsed": "2025-07-01T06:43:14.854722935+05:30",
+      "lastUsed": "2025-07-01T06:50:50.333612055+05:30",
       "isActive": true
     },
     {
       "keyIndex": 4,
       "keyName": "GEMINI_API_KEY_5",
-      "requestCount": 35,
+      "requestCount": 39,
       "errorCount": 1,
-      "lastUsed": "2025-07-01T06:43:12.807013107+05:30",
+      "lastUsed": "2025-07-01T06:50:48.603971466+05:30",
       "isActive": true
     },
     {
       "keyIndex": 3,
       "keyName": "GEMINI_API_KEY_4",
-      "requestCount": 35,
+      "requestCount": 40,
       "errorCount": 0,
-      "lastUsed": "2025-07-01T06:43:11.987760381+05:30",
+      "lastUsed": "2025-07-01T06:50:51.255049009+05:30",
       "isActive": true
     }
   ],
-  "lastUpdate": "2025-07-01T06:43:14.854798155+05:30"
+  "lastUpdate": "2025-07-01T06:50:51.255254555+05:30"
 }
