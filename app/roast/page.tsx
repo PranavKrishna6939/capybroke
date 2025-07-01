@@ -8,6 +8,7 @@ import LoadingSpinner from "@/components/loading-spinner";
 
 interface RoastData {
   roast: string;
+  score: number;
   stocks: {
     [ticker: string]: {
       company: string;
@@ -91,8 +92,7 @@ function RoastContent() {
       }, 1000);
       return () => clearTimeout(timer);
     } else if (rateLimitError && countdown === 0) {
-      // Reset rate limit error when countdown reaches 0
-      setRateLimitError(null);
+      window.location.href = '/';
     }
   }, [countdown, rateLimitError]);
 

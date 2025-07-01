@@ -2,69 +2,69 @@
   "apiMetrics": {
     "analytics": {
       "endpoint": "analytics",
-      "requestCount": 50,
-      "lastRequestTime": "2025-07-01T04:58:25.385909495+05:30",
-      "requestsToday": 50,
-      "requestsThisHour": 50,
+      "requestCount": 53,
+      "lastRequestTime": "2025-07-01T06:35:33.766220736+05:30",
+      "requestsToday": 53,
+      "requestsThisHour": 53,
       "errorCount": 0
     },
     "roast": {
       "endpoint": "roast",
-      "requestCount": 17,
-      "lastRequestTime": "2025-07-01T04:35:02.342178114+05:30",
-      "requestsToday": 17,
-      "requestsThisHour": 17,
+      "requestCount": 46,
+      "lastRequestTime": "2025-07-01T06:43:14.854789146+05:30",
+      "requestsToday": 46,
+      "requestsThisHour": 46,
       "errorCount": 0
     }
   },
   "userMetrics": {
-    "uniqueUsers": 1,
-    "totalPageVisits": 4,
+    "uniqueUsers": 7,
+    "totalPageVisits": 36,
     "concurrentUsers": 0,
     "highestConcurrent": 2,
-    "lastUpdate": "2025-07-01T04:58:25.385920251+05:30"
+    "lastUpdate": "2025-07-01T06:43:14.854803533+05:30"
   },
   "geminiKeyMetrics": [
     {
       "keyIndex": 1,
       "keyName": "GEMINI_API_KEY_2",
-      "requestCount": 15,
+      "requestCount": 42,
       "errorCount": 0,
-      "lastUsed": "2025-07-01T04:35:02.342129434+05:30",
+      "lastUsed": "2025-07-01T06:43:14.343430396+05:30",
       "isActive": true
     },
     {
       "keyIndex": 0,
       "keyName": "GEMINI_API_KEY_1",
-      "requestCount": 15,
+      "requestCount": 42,
       "errorCount": 0,
-      "lastUsed": "2025-07-01T04:35:01.33490008+05:30",
+      "lastUsed": "2025-07-01T06:43:12.807083368+05:30",
       "isActive": true
     },
     {
       "keyIndex": 2,
       "keyName": "GEMINI_API_KEY_3",
-      "requestCount": 12,
+      "requestCount": 39,
       "errorCount": 0,
-      "lastUsed": "2025-07-01T04:34:59.081987317+05:30",
+      "lastUsed": "2025-07-01T06:43:14.854722935+05:30",
       "isActive": true
     },
     {
       "keyIndex": 4,
       "keyName": "GEMINI_API_KEY_5",
-      "requestCount": 11,
+      "requestCount": 35,
       "errorCount": 1,
-      "lastUsed": "2025-07-01T04:35:00.220766318+05:30",
+      "lastUsed": "2025-07-01T06:43:12.807013107+05:30",
       "isActive": true
     },
     {
       "keyIndex": 3,
       "keyName": "GEMINI_API_KEY_4",
-      "requestCount": 11,
+      "requestCount": 35,
       "errorCount": 0,
-      "lastUsed": "2025-07-01T04:35:00.033569009+05:30",
+      "lastUsed": "2025-07-01T06:43:11.987760381+05:30",
       "isActive": true
     }
   ],
-  "lastUpdate": "2025-07-01T04:58:25.38591599+05:30"
+  "lastUpdate": "2025-07-01T06:43:14.854798155+05:30"
 }

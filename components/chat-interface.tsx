@@ -41,10 +41,10 @@ export default function ChatInterface() {
     const tickers = input
       .split(',')
       .map(ticker => ticker.trim().toUpperCase())
-      .filter(ticker => ticker.length > 0 && ticker.length <= 5 && /^[A-Z]+$/.test(ticker));
+      .filter(ticker => ticker.length > 0 && ticker.length <= 20 && /^[A-Z0-9]+$/.test(ticker));
 
     if (tickers.length === 0) {
-      alert("Please enter valid stock tickers (e.g., AAPL, TSLA, AMZN)");
+      alert("Please enter valid Indian stock tickers (e.g., RELIANCE, TCS, INFY, HDFCBANK)");
       setIsSubmitting(false);
       return;
     }
@@ -112,7 +112,7 @@ export default function ChatInterface() {
                     <textarea
                       value={input}
                       onChange={(e) => setInput(e.target.value)}
-                      placeholder="Enter your stock tickers (e.g., AAPL, TSLA, AMZN, NVDA)..."
+                      placeholder="Enter your stock tickers (e.g., RELIANCE, TCS, INFY, ICICIBANK)..."
                       className="form-textarea w-full resize-none rounded-lg bg-gray-800/50 px-4 py-3 text-gray-200 placeholder-gray-500 focus:border-brown-500 focus:ring-2 focus:ring-brown-500/20"
                       rows={3}
                       disabled={isSubmitting}
@@ -145,9 +145,9 @@ export default function ChatInterface() {
 
                 {/* Example tickers */}
                 <div className="mt-6 pt-6 border-t border-gray-700/50">
-                  <p className="text-sm text-gray-400 mb-3">Just paste your stock tickers below, separated by commas. Popular examples:</p>
+                  <p className="text-sm text-gray-400 mb-3">Just paste your stock tickers below, seperated by commas. Popular examples:</p>
                   <div className="flex flex-wrap gap-2">
-                    {["AAPL, MSFT, GOOGL", "TSLA, NVDA, AMD", "SPY, QQQ, VTI", "AMZN, META, NFLX"].map((example, index) => (
+                    {["RELIANCE, TCS, INFY", "HDFCBANK, ICICIBANK, SBIN", "ITC, HINDUNILVR, NESTLEIND"].map((example, index) => (
                       <button
                         key={index}
                         type="button"

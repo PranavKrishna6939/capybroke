@@ -16,11 +16,11 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validate tickers (basic validation)
     validTickers = tickers.filter(ticker => 
       typeof ticker === 'string' && 
-      ticker.length <= 5 && 
-      /^[A-Z]+$/.test(ticker)
+      ticker.length >= 1 && 
+      ticker.length <= 20 && 
+      /^[A-Z0-9]+$/.test(ticker)
     );
 
     if (validTickers.length === 0) {
@@ -30,13 +30,11 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Generate user ID for analytics tracking
     const userAgent = request.headers.get('user-agent') || '';
     const xForwardedFor = request.headers.get('x-forwarded-for') || '';
     const clientIP = xForwardedFor.split(',')[0] || 'unknown';
     const userID = `${clientIP}-${Date.now()}`;
 
-    // Forward request to Go backend with user tracking
     const response = await fetch(`${GO_BACKEND_URL}/roast`, {
       method: 'POST',
       headers: {
