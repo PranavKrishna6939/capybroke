@@ -1,0 +1,26 @@
+# Systemd service file for Portfolio Roast Backend
+# Copy this to /etc/systemd/system/portfolio-backend.service
+
+[Unit]
+Description=Portfolio Roast Backend Service
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/path/to/your/app/backend
+ExecStart=/path/to/your/app/backend/portfolio-roast-prod
+Restart=always
+RestartSec=3
+Environment=ENVIRONMENT=production
+EnvironmentFile=/path/to/your/app/backend/.env
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/path/to/your/app/backend/data
+
+[Install]
+WantedBy=multi-user.target

@@ -7,7 +7,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "start:all": "./backend/start.sh"
+    "start:all": "./backend/start.sh",
+    "build:prod": "./build-production.sh",
+    "start:prod": "./start-production.sh",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "deploy:local": "docker-compose build && docker-compose up -d",
+    "deploy:check": "curl -f http://localhost:8080/health && curl -f http://localhost:3000"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",

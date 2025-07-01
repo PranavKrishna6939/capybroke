@@ -456,8 +456,11 @@ func (m *APIKeyManager) GetKeyCount() int {
 var apiKeyManager *APIKeyManager
 var analyticsManager *AnalyticsManager
 var rateLimiter *RateLimiter
+var startTime time.Time
 
 func main() {
+	startTime = time.Now()
+
 	err := godotenv.Load()
 	if err != nil {
 		log.Println("Warning: .env file not found")
@@ -490,9 +493,27 @@ func main() {
 
 func corsHandler(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Access-Control-Allow-Origin", "*")
+		// Get allowed origins from environment
+		frontendURL := os.Getenv("FRONTEND_URL")
+		if frontendURL == "" {
+			frontendURL = "http://localhost:3000"
+		}
+
+		origin := r.Header.Get("Origin")
+
+		// In production, be more restrictive with CORS
+		if os.Getenv("ENVIRONMENT") == "production" {
+			if origin == frontendURL {
+				w.Header().Set("Access-Control-Allow-Origin", origin)
+			}
+		} else {
+			// In development, allow any origin
+			w.Header().Set("Access-Control-Allow-Origin", "*")
+		}
+
 		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
-		w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, X-User-ID, X-User-Agent")
+		w.Header().Set("Access-Control-Allow-Credentials", "true")
 
 		if r.Method == "OPTIONS" {
 			w.WriteHeader(http.StatusOK)
@@ -558,8 +579,36 @@ func analyticsHandler(w http.ResponseWriter, r *http.Request) {
 
 func healthHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
-	json.NewEncoder(w).Encode(map[string]string{"status": "healthy"})
+
+	// Basic health check
+	health := map[string]interface{}{
+		"status":    "healthy",
+		"timestamp": time.Now().UTC().Format(time.RFC3339),
+		"version":   "1.0.0",
+		"uptime":    time.Since(startTime).Seconds(),
+	}
+
+	// Check API key availability
+	if apiKeyManager.GetKeyCount() > 0 {
+		health["api_keys"] = apiKeyManager.GetKeyCount()
+	} else {
+		health["status"] = "degraded"
+		health["warning"] = "No API keys available"
+	}
+
+	// Check data directory
+	if _, err := os.Stat("./data"); os.IsNotExist(err) {
+		health["status"] = "degraded"
+		health["warning"] = "Data directory not found"
+	}
+
+	statusCode := http.StatusOK
+	if health["status"] == "degraded" {
+		statusCode = http.StatusPartialContent
+	}
+
+	w.WriteHeader(statusCode)
+	json.NewEncoder(w).Encode(health)
 }
 
 func roastHandler(w http.ResponseWriter, r *http.Request) {
